@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css_product/product.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>product</title>
+  </head>
+  <body>
+    <script>
+      //create the header part using
+
+      let header = document.createElement("header");
+      let img = document.createElement("img");
+      let ul = document.createElement("ul");
+      let li_places = document.createElement("li");
+      let li_travel = document.createElement("li");
+      let li_online = document.createElement("li");
+      let a_places = document.createElement("a");
+      let a_travel = document.createElement("a");
+      let a_online = document.createElement("a");
+      let button_registre = document.createElement("button");
+
+      // i declared all header element and now i am going to put all element inside the header inchaalah
+
+      header.appendChild(img);
+      img.src = "images/logo-red.png";
+      header.appendChild(ul);
+      header.appendChild(button_registre);
+      button_registre.innerHTML = "Registre Now";
+      // i am going to put all li inside ul
+      ul.appendChild(li_places);
+      ul.appendChild(li_travel);
+      ul.appendChild(li_online);
+      // here i am going to put all a in his specific places (inside li)
+      li_places.appendChild(a_places);
+      li_travel.appendChild(a_travel);
+      li_online.appendChild(a_online);
+      a_places.href = "#";
+      a_travel.href = "#";
+      a_online.href = "#";
+      a_places.textContent = "Popular Places";
+      a_travel.textContent = "Travel Outside";
+      a_online.textContent = "Online Packages";
+      document.body.appendChild(header);
+
+      // finishing the header part
+
+      // now let's create product info ;
+
+      let section = document.createElement("section");
+      section.classList.add("info");
+      let product_name = document.createElement("div");
+      product_name.classList.add("product-info");
+      let product_tittle = document.createElement("h1");
+      let product_nav = document.createElement("nav");
+      let starts_div = document.createElement("div");
+      for (let i = 0; i < 5; i++) {
+        const stars = document.createElement("i");
+        stars.classList.add("fas");
+        stars.classList.add("fa-star");
+        stars.style.color = "#eeff00";
+        starts_div.appendChild(stars);
+      }
+      // let stars = document.createElement("i")
+      // stars.classList.add()
+      let review = document.createElement("p");
+      let local = document.createElement("p");
+
+      // let's all element inside their parent (product_name)
+      product_name.appendChild(product_tittle);
+      product_name.appendChild(product_nav);
+      product_nav.appendChild(starts_div);
+      product_nav.appendChild(review);
+      product_nav.appendChild(local);
+      section.appendChild(product_name);
+      document.body.appendChild(section);
+      //let's give some element value
+
+      product_tittle.textContent = "Wenge House";
+      review.textContent = "245 reviews";
+      local.textContent = "location , San Francisco California United States";
+
+      // now i am going to create product picture
+
+      let article = document.createElement("article");
+      section.appendChild(article);
+
+      // this part for create 2 divs . the first one contain one img
+      // and the second one has 4 img using for and if statement
+      for (let i = 1; i <= 2; i++) {
+        let div_container = document.createElement("div");
+        article.appendChild(div_container);
+        if (i === 1) {
+          let main_img = document.createElement("img");
+          main_img.src = `images/house-${i}.png`;
+          div_container.appendChild(main_img);
+        } else if (i === 2) {
+          for (let j = 1; j <= 4; j++) {
+            pics = document.createElement("img");
+            pics.src = `images/house-${j + 1}.png`;
+            div_container.appendChild(pics);
+          }
+        }
+      }
+      // and let's create a nav has h1,div>p*3 and h2
+
+      let price_nav = document.createElement("nav");
+      price_nav.classList.add("price-nav");
+      let h1_nav = document.createElement("h1");
+      let div_nav = document.createElement("div");
+      let h2_nav = document.createElement("h2");
+
+      // this for statement it's for creating 3 p element inside div_nav with defferent values
+
+      for (let i = 1; i <= 3; i++) {
+        let p = document.createElement("p");
+        div_nav.appendChild(p);
+
+        if (i === 2) {
+          p.textContent = "2 guest";
+        } else if (i === 2) {
+          p.textContent = "2 beds";
+        } else {
+          p.textContent = "2 bathrooms";
+        }
+      }
+
+      // and now let's give h1 and h2 some values
+
+      h1_nav.textContent = "Entire rental unit hostel by Brandon";
+      h2_nav.textContent = "$100/ day";
+
+      price_nav.appendChild(h1_nav);
+      price_nav.appendChild(div_nav);
+      price_nav.appendChild(h2_nav);
+      section.appendChild(price_nav);
+
+      // let's create the check part
+      let check_section = document.createElement("section");
+      check_section.classList.add("check-container");
+      let nav = document.createElement("nav");
+      // this for it's for creating  3 div
+      for (let i = 1; i <= 3; i++) {
+        let div = document.createElement("div");
+        let h2 = document.createElement("h2");
+        let p = document.createElement("p");
+        div.appendChild(h2);
+        div.appendChild(p);
+        nav.appendChild(div);
+        check_section.appendChild(nav);
+
+        if (i === 1) {
+          h2.textContent = "Check-in";
+          p.textContent = "Add date";
+        } else if (i === 2) {
+          h2.textContent = "Check-out";
+          p.textContent = "Add date";
+        } else {
+          h2.textContent = "Guest";
+          p.textContent = "2 guest";
+        }
+      }
+      let check_button = document.createElement("button");
+      check_button.textContent = "Check availabity";
+      check_section.appendChild(check_button);
+      document.body.appendChild(check_section);
+
+      // now let's create section that contains all local informations
+
+      let local_section = document.createElement("section");
+      local_section.classList.add("local-info")
+      let local_container = document.createElement("div");
+      local_container.classList.add("details")
+      let p = document.createElement("p");
+      p.classList.add("paragraph")
+      local_section.appendChild(local_container);
+      local_section.appendChild(p);
+      document.body.appendChild(local_section);
+
+      p.textContent = "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam a alias sed, obcaecati doloremque magnam itaque consequuntur dolorum! Eaque reiciendis nihil maiores ipsam dolore omnis quidem at velit ipsum quia totam pariatur corporis possimus sed, id assumenda sit hic quam tempora esse veniam. Eveniet quibusdam explicabo neque iste dolorem consequatur enim, provident impedit, corrupti, dolor dignissimos laborum perspiciatis harum nisi fugiat id delectus nostrum voluptatum. Est asperiores reprehenderit reiciendis. Sequi harum, dignissimos eius ipsum facilis quis quidem soluta illo consequatur iste magni porro vitae adipisci, quasi id, rerum cupiditate accusamus? Fuga illo ab aut saepe perspiciatis laudantium quisquam, architecto pariatur!"
+      // this for statement it's for creating 4 nav and inside this nav 1 div (inside the div i and h3) and p
+      for (let i = 1; i <= 4; i++) {
+        let nav = document.createElement("nav");
+        let div = document.createElement("div");
+        let i_element = document.createElement("i");
+        let h3 = document.createElement("h4");
+        let p = document.createElement("p");
+        nav.appendChild(div);
+        nav.appendChild(p);
+        div.appendChild(i_element);
+        div.appendChild(h3);
+        local_container.appendChild(nav);
+        if (i === 1) {
+          i_element.classList.add("fas");
+          i_element.classList.add("fa-home");
+          h3.textContent = "Entire home";
+          p.textContent = "You will have the entire flat for you";
+        } else if (i === 2) {
+          i_element.classList.add("fas");
+          i_element.classList.add("fa-tint");
+          h3.textContent = "Enhanced Clean";
+          p.textContent =
+            "This host has committed to Staybnb's cleaning process";
+        } else if (i === 3) {
+          i_element.classList.add("fas");
+          i_element.classList.add("fa-map-marker-alt");
+          h3.textContent = "Great location-";
+          p.textContent =
+            "90% of recent guest gave the location a 5-star rating";
+        } else {
+          i_element.classList.add("fas");
+          i_element.classList.add("fa-heart");
+          h3.textContent = "Great check-in";
+          p.textContent =
+            "100% of recent guest gave the check-in process a 5-star rating";
+        }
+      }
+
+      // AND let's create the comment part 
+      // let's begin with first part that contain client picture,rate and information , and button
+      let footer = document.createElement("footer");
+      let nav_client = document.createElement("nav");
+      let div = document.createElement("div");
+      
+      footer.appendChild(nav_client);
+      nav_client.appendChild(div);
+      // this for it's for create 2 divs
+      for (let i = 1; i <= 2; i++) {
+        let div_child = document.createElement("div");
+        div.appendChild(div_child);
+        // the first condition it's for create a div inside her an img
+        if (i ===1) {
+          div_child.classList.add("img");
+          let img = document.createElement("img");
+          img.src = "images/host.png";
+          div_child.appendChild(img);
+          // the seconde condition it's for create a div inside her h1 and another div inside her 3 p and another div ( for 5 stars)
+        } else {
+          div_child.classList.add("more-info");
+          let h1 = document.createElement("h1");
+          h1.textContent = "Hosted by Brandon"
+          let div_info = document.createElement("div");
+          div_info.classList.add("infoo");
+          let div_stars = document.createElement("div");
+          div_child.appendChild(h1);
+          div_child.appendChild(div_info);
+          div_info.appendChild(div_stars);
+          
+          // this for it's for create 5 stars inside div_stars
+          for (let j = 1; j <= 5; j++) {
+           let star = document.createElement("i");
+           star.classList.add("fas");
+           star.classList.add("fa-star");
+           star.style.color = "#eeff00";
+           div_stars.appendChild(star);
+          }
+
+          // the for it's for create 3 p inside div_info 
+
+          for (let x = 1; x <= 3; x++) {
+            let p = document.createElement("p");
+            if (x === 1) {
+              p.textContent = "245 reviews"
+            } else if(x === 2) {
+              p.textContent = "Response rate : 100%"
+            }
+            else{
+              p.textContent = "Response time : 60 mins";
+            }
+            div_info.appendChild(p);
+          }
+
+        }
+        
+      }
+      
+      // this code create button inside the nav_client
+      let button = document.createElement("button")
+      button.textContent = "Contact host";
+      nav_client.appendChild(button);
+          
+      // this part to create the part contains links and copyright 
+      
+      let div_link_copyright = document.createElement("div");
+      div_link_copyright.classList.add("links")
+      for (let i = 1; i <= 2 ; i++) {
+         if (i === 1) {
+            let div = document.createElement("div");
+            div_link_copyright.appendChild(div)
+            for (let j = 1; j <= 5; j++) {
+              let i_icon = document.createElement("i");
+              div.appendChild(i_icon);
+              if (j === 1) {
+                i_icon.classList.add("fab");
+                i_icon.classList.add("fa-facebook-f");
+                
+              } else if (j === 2) {
+                i_icon.classList.add("fab");
+                i_icon.classList.add("fa-twitter");
+
+              }else if (j === 3) {
+                i_icon.classList.add("fab");
+                i_icon.classList.add("fa-youtube");
+              }else if (j === 4) {
+                i_icon.classList.add("fab");
+                i_icon.classList.add("fa-instagram");
+              }else{
+                i_icon.classList.add("fab");
+                i_icon.classList.add("fa-linkedin-in");
+              }
+              
+            }
+         } else {
+            let p = document.createElement("p");
+            div_link_copyright.appendChild(p);
+            p.textContent = "Copyright @ 2021 Staybnb inc."
+         }
+        
+      }
+      footer.appendChild(div_link_copyright);
+      document.body.appendChild(footer);
+    </script>
+  </body>
+</html>

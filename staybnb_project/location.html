@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css_location/style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>Staybnb</title>
+  </head>
+  <body>
+    <header>
+      <img src="images/logo-red.png" alt="logo" />
+      <ul>
+        <li><a href="#">Popular Places</a></li>
+        <li><a href="#">Travel Outside</a></li>
+        <li><a href="#">Online Packages</a></li>
+      </ul>
+      <button>Registre Now</button>
+    </header>
+    <div class="content-name">
+      <p>200+ Options</p>
+      <h1>Recommended Places In San Francisco</h1>
+    </div>
+    <!------------------begin the product part----------->
+    
+      <script>
+        article = document.createElement("article");
+        // this for statement it's for create 9 nav inside this nav 3 div and inside each div some element...
+        for (let i = 1; i <= 9; i++) {
+          let nav = document.createElement("nav");
+          article.appendChild(nav);
+          // this code it's for create the first div and his element
+          let div_picture = document.createElement("div");
+          div_picture.classList.add("picture");
+          let img = document.createElement("img");
+          if (i > 6) {
+            img.src = `images/image-s${i - 5}.png`;
+          } else {
+            img.src = `images/image-s${i}.png`;
+          }
+          div_picture.appendChild(img);
+          nav.appendChild(div_picture);
+
+          // this code it's for create the second div and his element
+
+          let div_info = document.createElement("div");
+          div_info.classList.add("info");
+          let p1_info = document.createElement("p");
+          p1_info.textContent = "Private";
+          let h2 = document.createElement("h2");
+          h2.textContent = "Weng House";
+          let p2_info = document.createElement("p");
+          p2_info.textContent = "1 bedroom / 1 bathroom / Wifi / Kitchen";
+
+          let div = document.createElement("div");
+          // this for it's for create 5 stars
+          for (let j = 1; j <= 5; j++) {
+            let i_icon = document.createElement("i");
+            i_icon.style.color = "#eeff00";
+            div.appendChild(i_icon);
+            if (j === 5) {
+              i_icon.classList.add("fas");
+              i_icon.classList.add("fa-star-half-alt");
+            } else {
+              i_icon.classList.add("fas");
+              i_icon.classList.add("fa-star");
+            }
+          }
+          div_info.appendChild(p1_info);
+          div_info.appendChild(h2);
+          div_info.appendChild(p2_info);
+          div_info.appendChild(div);
+          nav.appendChild(div_info);
+          // this code it's for create the third div and his element
+          let div_price = document.createElement("div");
+          let p_price = document.createElement("p");
+          p_price.textContent = "2 guest";
+          let h3_price = document.createElement("h3");
+          h3_price.textContent = "$ 100/day";
+          // and
+          div_price.appendChild(p_price);
+          div_price.appendChild(h3_price);
+          nav.appendChild(div_price);
+          article.appendChild(nav)
+          document.body.appendChild(article);
+        }
+
+
+        let link = document.querySelectorAll(".picture")
+        link.forEach(element => {
+          element.addEventListener("click",function(){
+            window.location.href = "product.html";
+          })
+        });
+      </script>
+    
+
+    <!------------------end the product part----------->
+    <section>
+      <nav class="Clear">
+        <h2>Applied Filters</h2>
+        <p>Villa</p>
+        <h3>Select Filters</h3>
+        <a href="#">Clear</a>
+      </nav>
+      <nav>
+        <h2>Best For Americans</h2>
+        <div>
+          <p>Shopping Malls</p>
+          <p>(0)</p>
+        </div>
+        <div>
+          <p>Near Mountains</p>
+          <p>(0)</p>
+        </div>
+      </nav>
+      <nav>
+        <h2>Best For Americans</h2>
+        <div>
+          <p>Shopping Malls</p>
+          <p>(0)</p>
+        </div>
+        <div>
+          <p>Near Mountains</p>
+          <p>(0)</p>
+        </div>
+        <div>
+          <p>Shopping Malls</p>
+          <p>(0)</p>
+        </div>
+        <div>
+          <p>Near Mountains</p>
+          <p>(0)</p>
+        </div>
+        <div>
+          <p>Shopping Malls</p>
+          <p>(0)</p>
+        </div>
+        <div>
+          <p>Near Mountains</p>
+          <p>(0)</p>
+        </div>
+        <a href="#" id="view">View More</a>
+      </nav>
+    </section>
+
+    <footer>
+      <nav id="nav">
+        <div>
+          <img src="images/arrow.png" />
+        </div>
+        <div id="another-page">
+          <img src="images/arrow.png" />
+          <script>  
+          let div = document.getElementById("another-page");
+            for (let i = 1; i <= 9; i++) {
+              let p = document.createElement("p");
+              if (i === 1) {
+                p.id = "first";
+                p.textContent = i;
+              } else if (i === 8){
+                p.textContent = "...";
+              }
+              else if(i === 9){
+                p.textContent = "20";
+              }
+              else{
+                p.textContent = i;
+              }
+              div.appendChild(p);
+            }
+            
+
+          </script>
+          <img src="images/arrow.png" id="pic" />
+        </div>
+      </nav>
+      <div class="links">
+        <nav>
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-youtube"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-linkedin-in"></i>
+        </nav>
+        <p>Copyright @ 2021 Staybnb inc.</p>
+      </div>
+    </footer>
+  </body>
+</html>
